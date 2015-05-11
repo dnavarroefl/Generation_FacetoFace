@@ -1,0 +1,21 @@
+#Encripta las letras del alfabeto de la A a la Z según el cifrado Caesar
+
+	  result = []
+
+	  arr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+	  encrypted_arr = []
+
+	  ['a','d','b','e','c','f','d','g','e','h','f','i','g','j','h','i','k','j','l','k','m','l','n','m','o','n','p','o','q','p','r','q','s','r','t','s','u','t','v','u','w','v','x','w','y','x','z','y','z'].each do |char| 
+	  pos = arr.index char 
+	  new_pos = pos +3
+	  encrypted_arr.push arr[new_pos]
+	  new_pos = new_pos % arr.length
+	  result << encrypted_arr
+end 
+	  puts result[0].join
+
+
+
+
+
+
