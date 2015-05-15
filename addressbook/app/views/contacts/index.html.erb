@@ -1,0 +1,13 @@
+<h1> Contacts Index </h1>
+
+<ul> 
+    
+	<% @contacts.each do |contact| %> 
+
+	<li>Name: <%= contact.name %></li>
+	Show Contact details: <%= contact.id %> 
+
+<% end %>
+</ul>
+
+<%= link_to 'Home', contacts_path%>

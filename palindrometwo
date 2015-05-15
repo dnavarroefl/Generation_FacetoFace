@@ -1,0 +1,37 @@
+
+  def PalindromeTwo str
+
+    	str = str.gsub(/\W+/, '')
+    end
+
+    letterarray = str.split(//)
+      
+    letterarray each do |letter|
+    letter.downcase!
+    end 
+    
+    letterReverseArray = letterArray.reverse
+  	
+    letterArray.each do |letter|
+      letterReverseArrayIndex = 0
+      foundLetter = false
+
+      while letterReverseArrayIndex < letterReverseArray.length && !foundLetter do 
+        if letter.eql?
+          letterReverseArray[letterReverseArrayIndex]
+
+          foundLetter = true 
+          print letter 
+        end
+
+    letterReverseArrayIndex += 1
+    end 
+  
+  puts ""
+  end   
+end 
+
+PalindromeTwo("Noel - sees Leon")  == true
+PalindromeTwo("A war at Tarawa!")  == true
+
+

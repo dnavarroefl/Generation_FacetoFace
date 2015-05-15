@@ -1,0 +1,13 @@
+def ArrayAddition 
+	arr = []
+
+	sum = 0
+	arr.each { |a| sum+=a } 
+
+	arr == arr.length? 
+	
+	return arr
+end 
+ 
+ArrayAddition([5,7,16,1,2])  == false
+ArrayAddition([3,5,-1,8,12])  == true

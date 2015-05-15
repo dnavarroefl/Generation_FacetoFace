@@ -1,0 +1,84 @@
+#3 clases para los trabajadores
+#Utilizar la herencia
+module Base
+class Employee
+	attr_accessor :type, :name, :base, :rate, :email
+	def initialize type, name, base, rate
+		@type = type
+		@name = name
+		@base = base
+		@rate = rate
+		@email = email 
+		end 
+
+		def show_employee_info type, name, email, base
+		puts @type
+		puts @name
+		puts @email
+		puts @base
+	end 
+
+	def calculate_payroll 
+		#Payroll = num hours x hour rate
+		months = Hash.new("month")
+	
+		months = {"Alfredo" => 1000,
+		"Juan" => 2000,
+		"Steven" => 2500,
+		"Peter" => 1400}
+	end 
+
+	def send_notifications email, sms, twitter 
+		puts 'Would you like to receive your notification through(email, sms, twitter)?'
+		case notifications 
+		when 'email'
+			puts
+		when 'sms'
+			puts 
+		when 'twitter' 
+			puts 
+		else 
+			puts 'Please choose a valid option.'
+		end
+
+module BaseWorker
+class Employee
+	attr_accessor :type, :name, :base, :rate, :email
+	def initialize type, name, base, rate
+		@type = type
+		@name = name
+		@base = base
+		@rate = rate
+		@email = email 
+		end 
+end 
+
+module HoursWorker
+class Employee
+	attr_accessor :type, :name, :base, :rate, :email
+	def initialize type, name, base, rate
+		@type = type
+		@name = name
+		@base = base
+		@rate = rate
+		@email = email 
+		end 
+end
+
+module PlusHours
+class Employee
+	attr_accessor :type, :name, :base, :rate, :email
+	def initialize type, name, base, rate
+		@type = type
+		@name = name
+		@base = base
+		@rate = rate
+		@email = email 
+		end 
+end 
+end 
+
+employee1 = Employee.new 'Base', 'Alfredo', '@AlfredoCasado', 1000
+employee2 = Employee.new 'Hour', 'Juan', 'juan@gmail', 40, 50
+employee3 = Employee.new 'Hour', 'Steven', 605242478, 50, 50
+employee4 = Employee.new 'BasePlusHour', 'Peter', 'peter@gmail.com', 1000, 10, 40

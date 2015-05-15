@@ -1,0 +1,77 @@
+require 'pry'
+
+   @alphabet = ("a".."z").to_a 
+
+class Decipher 
+
+  def initialize alphabet, password
+    attr_accessor :alphabet, :password
+    @alphabet = alphabet
+    @password = password 
+  end 
+
+  def encrypt_pass(str)
+    encrypted_str = ''
+
+     @password.each do |char|
+      char.ord
+      result+3
+      result.chr
+      encrypted_str << result
+  end 
+
+  def decrypt_pass(str)
+    decrypted_str = ''
+
+    @password.each do |char|
+      char.ord
+      result-3
+      result.chr
+      decrypted_str << str
+  end
+
+  def evaluate_encryption(str)
+    # Crear un booleano para controlar que se produzca una única encriptación
+  end 
+end 
+
+=begin 
+class Manager 
+	
+	def initialize 
+    @accounts = []
+	end 
+
+  def add_accounts
+    @accounts << account
+  end 
+
+  def show_accounts
+    @accounts.each do |account|
+    puts user.password
+    puts user.web
+  end
+end   
+
+class Account
+  def initialize user, password, web
+    @user = user
+    @password = password
+    @web = web 
+  end 
+
+account1 = Account.new()
+pass1 = Password.new('dgvi')
+
+  #Otra solución posible...
+
+=begin
+ [alphabet].each do |char| 
+    pos = arr.index char 
+    new_pos = pos +3
+    encrypted_arr.push arr[new_pos]
+    new_pos = new_pos % arr.length
+    result << encrypted_arr
+=end 
+  
+
