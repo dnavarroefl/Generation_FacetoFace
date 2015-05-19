@@ -1,0 +1,17 @@
+<h1> Add a rating for this book </h1>
+
+<% @products.each do |product| %>
+<% product.name %>
+<% product.description %> 
+<% product.price %> 
+
+<% end %>  
+
+<%= form_for [@bookstore, @product] do |f| %> 
+
+	 <%= f.label :rating %>
+	 <%= f.text_field :rating %> 
+	 <br> 
+
+	 <%= f.submit 'Save' %>
+<% end %>

@@ -1,5 +1,11 @@
 class Address < ActiveRecord::Base
-	belongs_to :addressbook
-	validates :name, :address, presence: true
+	has many :contacts
+	validates :name, :address, :phonenumber, :email, presence: true
 end
+
+def self.find id
+	    where(id: id).first
+	end 
 end
+
+

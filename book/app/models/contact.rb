@@ -1,7 +1,6 @@
 class Contact < ActiveRecord::Base
-	belongs to :book
-	
-	def self.most_recent_contacts n
-		@contacts = Contact.order(created_at: :desc).limit(n)	
-	end 
+	belongs_to :addressbook
+	validates :name, :address, :phonenumber, :email, presence: true
+	validates :phonenumber, numericality: true
+	validates :email, format: {with: /\A[a-zAZ0-9]+\s\w/ } 
 end

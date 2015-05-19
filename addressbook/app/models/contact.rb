@@ -1,4 +1,7 @@
 class Contact < ActiveRecord::Base
-	belongs_to :addressbook
-	validates :name, :address, :phonenumber, :email, presence: true
+	has_many :contacts
+
+	#validates :name, :address, :phonenumber, :email, presence: true
+	#validates :phonenumber, numericality: true
+	#validates :email, format: {with: /\A\w[a-zAZ09]/} 
 end

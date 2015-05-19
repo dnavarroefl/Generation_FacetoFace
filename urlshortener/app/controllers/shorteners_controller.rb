@@ -1,29 +1,27 @@
 class ShortenersController < ApplicationController
-	def index
-		@urls = Shortener.all
-	end 
 
-	def redirect_urls  
-	end 
+def index
+	@urls = Shortener.all
+end
 
-	def show
-		@url = Shortener.find(params[:id])
-		@url.visits += 1
-		@url.save
+def show 
+	id = params[:id]
+	@url=Shortener.find(id)
+end 
+
+def redirect_url
+		begin
+			@urlto = Shortener.find params[:id]
+			@urlto.visit += 1
+			@urlto.save
+			redirect_to @urlto.url
 		rescue ActiveRecord::RecordNotFound
 			render 'oh_my_week_page'
 		end
+	end
 
-	def add_new_url
-		@url = Shortener.new(url_params)
-		@url.save
-		redirect_to @url
-	end 
-
-=begin
-	private 
-		def url_params
-			params.require(:url).permit(:url_id, :url, :visits)
-		end
-=end
+def most_visited_pages
+	@urls = Shortener.all
+	@urls.visit.where()
+	end
 end

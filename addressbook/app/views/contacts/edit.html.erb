@@ -1,0 +1,18 @@
+<%= form_for :contact, url: contacts_path do |f| %> 
+	 <%= f.label :name %> 
+	 <%= f.text_field :name %> 
+	 <br>
+	 <%= f.label :address %>
+	 <%= f.text_field :address %> 
+	 <br> 
+	 <%= f.label :phonenumber %> 
+	 <%= f.text_field :phonenumber %> 
+	 <br>
+	 <%= f.label :email %> 
+	 <%= f.text_field :email %> 
+ 
+	 <%= f.submit 'Save' %> 
+<% end %>
+
+<%= link_to 'Cancel', contacts_path %>
+	

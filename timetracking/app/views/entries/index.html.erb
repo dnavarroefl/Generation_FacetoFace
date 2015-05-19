@@ -1,10 +1,20 @@
-<h1><%= @project.name %></h1>
+<%= flash_message %> 
+
+<h2><%= @project.name %></h2>
+
+<div class = "entry_data">
 <ul> 
 	<% @entries.each do |entry| %>
 	<li>
 		<%= entry.hours %> h
 		<%= entry.minutes %> m -
 		<%= entry.date %> 
+		<%= link_to 'Edit', edit_project_entry_path( @project, entry) %> 
+		<%= link_to 'Delete', project_entry_path( @project, entry) %>
 	</li>
 	<% end %>
 </ul>
+</div> 
+
+<%= link_to 'New', new_project_entry_path(@project) %> 
+<%= link_to 'Back', project_entries_path(@project) %> 

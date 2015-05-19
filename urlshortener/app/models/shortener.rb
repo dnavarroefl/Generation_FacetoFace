@@ -1,7 +1,7 @@
 class Shortener < ActiveRecord::Base
-	has many :urls
+	has_many :urls
 
-	def self.most_recent_urls n
-		@urls = Shortener.order(created_at: :desc).limit(n)	
+	def self.most_recent_pages n
+		@shorteners = Shortener.order(created_at: :desc).limit(n)	
 	end 
 end

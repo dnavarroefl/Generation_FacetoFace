@@ -1,0 +1,37 @@
+<h1> Bookstore Index </h1>
+
+<%= form_tag bookstores_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<% @products.each do |product| %> 
+
+<ul> 
+	<table>
+		<tr>
+			<td><li>ID:<br>
+				<%= product.id %></li></td>
+		</tr>
+		<tr> 
+			<td><li>Product:<br>
+			<%= product.name %></li></td>
+		</tr>
+			<td><li>Description:<br>
+				<%= product.description %></li></td>
+		</tr>
+		<tr>
+			<td><li>Price:<br> 
+				<%= product.price %> eur.</li></td>
+		</tr> 
+	</table>
+</ul>
+
+Review Product (1-5):
+<a href= "/bookstores/1/products"></a>
+
+<% end %> 
+
+

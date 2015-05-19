@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get '/' => 'contacts#home'
-  get '/contacts' => 'contacts#index'
-end
+  get '/' => 'contacts#home', as: 'root' 
+  resources :contacts 
+	end
+end 

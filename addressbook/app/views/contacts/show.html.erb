@@ -1,11 +1,15 @@
 <h1> Show Contact </h1>
 
-<%= contacts.id %> 
+<% @contacts.each do |contact| %> 
+	
+	<li>Id: <%= contact.id %></li>
 
-	<li>Name: <%= contacts.name %></li>
-	<li>Address: <%= contacts.address %></li>
-	<li>Phone: <%= contacts.phonenumber %></li>
-	<li>Email: <%= contacts.email %></li>
+	<li>Name: <%= contact.name %></li>
+	<li>Address: <%= contact.address %></li>
+	<li>Phone: <%= contact.phonenumber %></li>
+	<li>Email: <%= contact.email %></li>
 	<br>
 
+	<% end %>
 
+<%= link_to 'Show all contacts', contacts_path%>

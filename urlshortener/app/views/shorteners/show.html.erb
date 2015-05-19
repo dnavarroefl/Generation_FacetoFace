@@ -1,0 +1,17 @@
+<h1> Show URL </h1>
+
+<ul id="url_list">
+	
+<% @urls.each do |url| %>
+
+<li><%= url.id %><br>
+	URL: <%= url.url %><br> 
+	Created at: <%= url.created_at.mday %> /
+	<%= url.created_at.mon %> /
+	<%= url.created_at.year %><br>
+	Visits: <%= url.visits %> </li>
+<% end %>
+</ul>
+
+
+

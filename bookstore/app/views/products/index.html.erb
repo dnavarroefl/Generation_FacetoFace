@@ -1,0 +1,13 @@
+<h1> Book Store Index </h1>
+
+	<ul>
+		<% @products.each do |product| %> 
+	<li>
+		<%= product.name %>
+		<%= product.description %> 
+		<%= product.price %> eur.
+	</li>
+	<% end %>
+</ul>
+
+

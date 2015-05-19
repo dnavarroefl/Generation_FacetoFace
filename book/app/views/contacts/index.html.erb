@@ -1,15 +1,37 @@
 <h1> Contacts Index </h1>
 
-<ul> 
-    
+<div class = "home_bar">
+<%= link_to 'Home', addressbook_contacts_path%><br>
+</div>
+ 
 	<% @contacts.each do |contact| %> 
 
-	<li>Name: <%= contact.name %></li>
-	<li>Address: <%= contact.address %></li>
-	<li>Phone: <%= contact.phone %></li>
-	<li>Email: <%= contact.email %></li><br>
-
+<div class = "contact_table">
+<table>
+		<tr>
+		Id: <%= contact.id %><br>
+		Name: <%= contact.name %><br>
+		Address: <%= contact.address %><br>
+		Phone: <%= contact.phonenumber %><br>
+		Email: <%= contact.email %>
+		</tr>
+		<br><%= link_to 'Edit Contact', edit_addressbook_contact %> 
+</table>
+</div>
 <% end %>
-</ul>
 
-<%= link_to 'Home', contacts_path%>
+<%= link_to 'Index', addressbook_contacts_path %> 
+
+<div class = "site_map">
+<ul> 
+	<li><a href="/sitemaps/a"></a>
+	</li>
+	<li><a href="/sitemaps/b"></a>
+	</li>
+	<li><a href="/sitemaps/c"></a>
+	</li>
+</ul>
+</div>
+
+
+

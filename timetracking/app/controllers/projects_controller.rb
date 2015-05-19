@@ -1,43 +1,57 @@
 class ProjectsController < ApplicationController
 
-		def index
+	def index
 			@projects = Project.order('created_at DESC').limit(10)	
 			render 'index'
-		end  
+	end  
 
-		def show
-			begin 
+	def edit 
+		@project = Project.find params[:project_id]
+	end 
+
+	def show
+		begin 
 				@projects = Project.find params[:id]
-			rescue ActiveRecord::RecordNotFound
+		
+		rescue ActiveRecord::RecordNotFound
+
 				render 'no_projects_found', layout: 'admin'
-			end
-		end 
-=begin 	 	
-def total_hours month, year 
-			all_entries = self.entries
-			all_selected_entries = all_entries.select do |entry|
-			entry.date.month == month && entry.date.years == year  
-		end 
-		all_selected_entries.reduce(0) {|sum, entry| sum+entry.hours}
 		end
-=end 
-		def new 
-			@project = Project.new
-		end 
-
-		def create 
-			@project = Project.new project_params
-			if @project.save 
-				redirect_to @project
-			else 
-				render 'new'
-			end 
-		end 
-
-		private 
-		def project_params
-			params.require(:project).permit(:name, :description)
-		end 
 	end 
  
+	def new 
+			@project = Project.new
+	end 
 
+	def create 	
+		@project = Project.new project_params
+		@project.save 
+		redirect_to 'new'
+		end 
+	end 
+
+	def flash_message
+		display_message[:alert] || display_message[:notice]
+	end 
+
+	def destroy 
+		@project = Project.find params[:project_id]
+		@project.find params[:id]
+		@project.destroy 
+		redirect_to project_path(@project)
+	end  
+
+	private 
+
+	def display_message
+		if flash[type]
+			display_message :div, class: type 
+			content_tag do 
+			flash[type]
+	end
+	 
+	def project_params
+		params.require(:project).permit(:name, :description)
+	end 
+end  
+end 
